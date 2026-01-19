@@ -1,0 +1,41 @@
+{
+    "target": "contracts/",
+    "timestamp": "2026-01-19T22:26:28.544263",
+    "summary": {
+        "CRITICAL": 1,
+        "HIGH": 2,
+        "MEDIUM": 1,
+        "LOW": 0,
+        "TOTAL": 4
+    },
+    "issues": [
+        {
+            "filename": "Secure.sol",
+            "severity": "HIGH",
+            "title": "Reentrancy Risk",
+            "line": 20,
+            "desc": "Low-level call detected. Ensure 'Check-Effects-Interactions' pattern is used."
+        },
+        {
+            "filename": "Vulnerable.sol",
+            "severity": "CRITICAL",
+            "title": "Missing Access Control",
+            "line": 10,
+            "desc": "Function 'function emergencyDrain() public {' performs critical actions but lacks 'onlyOwner'."
+        },
+        {
+            "filename": "Vulnerable.sol",
+            "severity": "HIGH",
+            "title": "Reentrancy Risk",
+            "line": 19,
+            "desc": "Low-level call detected. Ensure 'Check-Effects-Interactions' pattern is used."
+        },
+        {
+            "filename": "Vulnerable.sol",
+            "severity": "MEDIUM",
+            "title": "Phishing Risk",
+            "line": 27,
+            "desc": "Avoid 'tx.origin' for authorization. Use 'msg.sender' instead."
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+name: RoboScan Security Audit
+
+on: [push, pull_request]
+
+jobs:
+  audit_code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Run RoboScan
+        run: |
+          python main.py contracts/
+      
+      - name: Upload Security Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Security-Report
+          path: audit_report.html
